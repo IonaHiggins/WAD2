@@ -1,4 +1,5 @@
 const goalsDAO = require("../models/goalsModel.js");
+const userDao = require('../models/userModel.js');
 
 const db = new(goalsDAO);
 db.init();
@@ -40,4 +41,23 @@ exports.updateGoal = function(req,res){
   db.updateEntry(req.body._id,req.body.name,req.body.type,req.body.goalValue,req.body.goalDate);
 }
 
-
+exports.showRegisterPage = function(req, res) {
+  res.render("user/registration");
+   } 
+   exports.postNewUser = function(req, res) {
+    const user = req.body.username;
+    const password = req.body.pass;
+    if (!user || !password) {
+      res.send(401, 'no user or no password');
+    return;
+     }
+     userDao.lookup(user, function(err, u) {
+      if (u) {
+        res.send(401, "User exists:", user);
+        return;
+      }
+        userDao.create(user, password);
+        console.log("register user", user, "password", password);
+        res.redirect('/login');
+      });
+      } 
