@@ -66,18 +66,44 @@ class goals {
         console.log('entry created', entry);
         this.db.insert(entry, function(err, doc) {
         if (err) {
-        console.log('Error inserting document', subject);
+        console.log('Error inserting document', _id);
         } else {
         console.log('document inserted into the database', doc);
         }
         }) 
     } 
 
-    deleteEntry(name){
+    deleteEntry(_id){
         var entry= {
-            name: name,
+            _id: _id,
         }
+        this.db.remove(entry, function(err,doc){
+            if (err){
+                console.log("Error removing document",_id)
+            } else{
+                console.log("Document removed from the database",doc);
+            }
+        })
     }
+
+    updateEntry(_id,name,type,goalValue,goalDate){
+        var entry = {
+            name: name,
+            type: type,
+            goalValue: goalValue,
+            goalDate: goalDate}
+            console.log('entry created', entry);
+            this.db.update
+            ({_id: _id},{$set:{"name":name, "type":type, "goalValue": goalValue, "goalDate": goalDate}},{},function(err,docs){
+                if(err){
+                    console.log("Error");
+                }
+                else{
+                    console.log(docs,"Documents updated");
+                }
+            });
+    }
+  
       
 }
 

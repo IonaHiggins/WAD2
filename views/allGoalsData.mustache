@@ -1,0 +1,32 @@
+<html>
+    <head>
+        {{>header}}
+    </head>
+    <body>
+        {{#goal}}
+        <div class = "card">
+            <div class = "card-body">
+            <h3 class = "card-header">Goal:</h3>
+                <p class = "card-text">
+                    ID: {{_id}}
+                </p>
+                <p class = "card-text">
+                    Goal Name: {{name}}
+                </p>
+                <p class = "card-text">
+                    Goal Type: {{type}}
+                </p>
+                <p class = "card-text">
+                    Goal Value: {{goalValue}}
+                </p>
+                <p class = "card-text">
+                    Goal Date: {{goalDate}}
+                </p>
+            </div>
+        </div>
+        {{/goal}}
+        {{^goal}}
+            No goals yet.
+        {{/goal}}
+    </body>
+</html>
