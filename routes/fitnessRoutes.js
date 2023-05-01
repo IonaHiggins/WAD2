@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const controller = require('../controllers/fitnessController.js');
+const {login} = require('../auth/auth')
+
+router.post('/login', login, controller.handleLogin);
 
 router.get('/', controller.goals_index);
 
@@ -15,6 +18,8 @@ router.post("/update",controller.updateGoal);
 
 router.get('/register', controller.showRegisterPage);
 router.post('/register', controller.postNewUser);
+
+router.get('/login', controller.showLoginPage);
 
 
 router.use(function(req, res) {
