@@ -14,7 +14,8 @@ class goals {
             name: 'testName',
             type: 'testType',
             goalValue: 'testValue',
-            goalDate: "testDate"
+            goalDate: "testDate",
+            complete: "off"
         });
     
         console.log("load test added");
@@ -57,12 +58,13 @@ class goals {
         })
     }
 
-    addEntry(name, type, goalValue, goalDate) {
+    addEntry(name, type, goalValue, goalDate,complete) {
         var entry = {
         name: name,
         type: type,
         goalValue: goalValue,
-        goalDate: goalDate}
+        goalDate: goalDate,
+        complete: complete}
         console.log('entry created', entry);
         this.db.insert(entry, function(err, doc) {
         if (err) {
