@@ -20,6 +20,17 @@ exports.aboutUs = function(req,res){
   res.render("aboutUs");
 }
 
+exports.showFitness = function(req,res){
+  res.render("fitness");
+}
+exports.showNutrition = function(req,res){
+  res.render("nutrition");
+}
+
+exports.showLifestyle = function(req,res){
+  res.render("lifestyle");
+}
+
 exports.goals_index = function (req, res) {
     db.getAllEntries()
       .then((list) => {

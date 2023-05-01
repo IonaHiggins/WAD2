@@ -9,11 +9,40 @@ router.post('/login', login, controller.handleLogin);
 
 router.get('/', controller.aboutUs);
 
-router.get('/goals',verify,controller.goals_index);
+router.get('/goals',controller.goals_index);
+
+router.get('/register',controller.showRegisterPage);
+router.post('/register', controller.postNewUser);
+
+router.get("/loggedin",controller.goals_index)
+router.get('/add',controller.showNewGoal);
+router.post("/add",controller.addGoal);
+
+router.get('/lifestyle',controller.showLifestyle);
+router.get('/nutrition', controller.showNutrition);
+router.get('/fitness',controller.showFitness);
+
+
+router.get("/delete",controller.showDeleteGoal);
+router.post("/delete",controller.deleteGoal);
+
+router.get("/update",controller.showUpdateGoal);
+router.post("/update",controller.updateGoal);
+
+
+/*router.get('/goals',verify,controller.goals_index);
+
+router.get('/register',controller.showRegisterPage);
+router.post('/register', controller.postNewUser);
 
 router.get("/loggedin",verify, controller.goals_index)
 router.get('/add',verify,controller.showNewGoal);
 router.post("/add",controller.addGoal);
+
+router.get('/lifestyle',verify,controller.showLifestyle);
+router.get('/nutrition', verify, controller.showNutrition);
+router.get('/fitness',verify,controller.showFitness);
+
 
 router.get("/delete",verify,controller.showDeleteGoal);
 router.post("/delete",verify,controller.deleteGoal);
@@ -21,10 +50,7 @@ router.post("/delete",verify,controller.deleteGoal);
 router.get("/update",verify,controller.showUpdateGoal);
 router.post("/update",verify,controller.updateGoal);
 
-router.get('/register',verify, controller.showRegisterPage);
-router.post('/register', verify,controller.postNewUser);
-
-router.get('/login', controller.showLoginPage);
+router.get('/login', controller.showLoginPage);*/
 
 
 router.use(function(req, res) {
