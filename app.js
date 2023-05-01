@@ -1,6 +1,10 @@
 const nedb = require("nedb");
 const express = require("express");
 const path = require("path");
+require('dotenv').config()
+
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));

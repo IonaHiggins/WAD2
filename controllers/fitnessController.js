@@ -44,9 +44,9 @@ exports.updateGoal = function(req,res){
 exports.showRegisterPage = function(req, res) {
   res.render("user/registration");
    } 
-   exports.postNewUser = function(req, res) {
-    const user = req.body.username;
-    const password = req.body.pass;
+    exports.postNewUser = function(req, res) {
+      const user = req.body.username;
+      const password = req.body.pass;
     if (!user || !password) {
       res.send(401, 'no user or no password');
     return;
@@ -61,3 +61,13 @@ exports.showRegisterPage = function(req, res) {
         res.redirect('/login');
       });
       } 
+
+exports.handleLogin = function (req, res) {
+  res.render("newEntry", {
+    title: "Guest Book",
+    user: "user"
+  });
+};
+exports.showLoginPage = function(req, res) {
+  res.render("user/login");
+  };
