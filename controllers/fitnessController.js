@@ -49,7 +49,7 @@ exports.showNewGoal = function (req, res) {
   };
 
 exports.addGoal = function(req,res){
-    db.addEntry(req.body.name,req.body.type,req.body.goalValue,req.body.goalDate);
+    db.addEntry(req.body.name,req.body.type,req.body.goalValue,req.body.goalDate,req.body.complete);
   }
 
 exports.showDeleteGoal = function(req,res){
@@ -64,7 +64,7 @@ exports.showUpdateGoal = function(req,res){
 }
 
 exports.updateGoal = function(req,res){
-  db.updateEntry(req.body._id,req.body.name,req.body.type,req.body.goalValue,req.body.goalDate);
+  db.updateEntry(req.body._id,req.body.name,req.body.type,req.body.goalValue,req.body.goalDate,req.body.complete);
 }
 
 exports.showRegisterPage = function(req, res) {
