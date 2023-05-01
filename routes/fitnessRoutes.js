@@ -11,6 +11,7 @@ router.get('/', controller.aboutUs);
 
 router.get('/goals',controller.goals_index);
 
+router.get("/loggedin",controller.handleLogin);
 router.get('/register',controller.showRegisterPage);
 router.post('/register', controller.postNewUser);
 
