@@ -2,22 +2,27 @@ const express = require("express");
 const router = express.Router();
 const controller = require('../controllers/fitnessController.js');
 const {login} = require('../auth/auth')
+const {verify} = require('../auth/auth')
 
+router.get('/login', controller.showLoginPage);
 router.post('/login', login, controller.handleLogin);
 
-router.get('/', controller.goals_index);
+router.get('/', controller.aboutUs);
 
-router.get('/add', controller.showNewGoal);
+router.get('/goals',verify,controller.goals_index);
+
+router.get("/loggedin",verify, controller.goals_index)
+router.get('/add',verify,controller.showNewGoal);
 router.post("/add",controller.addGoal);
 
-router.get("/delete",controller.showDeleteGoal);
-router.post("/delete",controller.deleteGoal);
+router.get("/delete",verify,controller.showDeleteGoal);
+router.post("/delete",verify,controller.deleteGoal);
 
-router.get("/update",controller.showUpdateGoal);
-router.post("/update",controller.updateGoal);
+router.get("/update",verify,controller.showUpdateGoal);
+router.post("/update",verify,controller.updateGoal);
 
-router.get('/register', controller.showRegisterPage);
-router.post('/register', controller.postNewUser);
+router.get('/register',verify, controller.showRegisterPage);
+router.post('/register', verify,controller.postNewUser);
 
 router.get('/login', controller.showLoginPage);
 

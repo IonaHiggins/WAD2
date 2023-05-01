@@ -4,6 +4,21 @@ const userDao = require('../models/userModel.js');
 const db = new(goalsDAO);
 db.init();
 
+exports.showLoginPage = function (req, res) {
+  res.render("user/login");
+};
+
+exports.handleLogin = function (req, res) {
+  // res.redirect("/new");
+  res.render("loggedInLanding", {
+    title: "Guest Book",
+    user: "user"
+  });
+};
+
+exports.aboutUs = function(req,res){
+  res.render("aboutUs");
+}
 
 exports.goals_index = function (req, res) {
     db.getAllEntries()
@@ -17,7 +32,7 @@ exports.goals_index = function (req, res) {
         console.log("promise rejected", err);
       });
   };
-
+  
 exports.showNewGoal = function (req, res) {
     res.render("addGoal");
   };
@@ -62,12 +77,3 @@ exports.showRegisterPage = function(req, res) {
       });
       } 
 
-exports.handleLogin = function (req, res) {
-  res.render("newEntry", {
-    title: "Guest Book",
-    user: "user"
-  });
-};
-exports.showLoginPage = function(req, res) {
-  res.render("user/login");
-  };
