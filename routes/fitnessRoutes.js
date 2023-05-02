@@ -30,6 +30,9 @@ router.post("/delete",controller.deleteGoal);
 router.get("/update",controller.showUpdateGoal);
 router.post("/update",controller.updateGoal);
 
+router.get('/posts/:author', controller.getUserGoals);
+router.post("/posts:author", controller.showUserGoals);
+
 
 /*router.get('/goals',verify,controller.goals_index);
 

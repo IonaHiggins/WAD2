@@ -11,6 +11,7 @@ class goals {
     }
     init() {
         this.db.insert({
+            author: "test author",
             name: 'testName',
             type: 'testType',
             goalValue: 'testValue',
@@ -58,8 +59,9 @@ class goals {
         })
     }
 
-    addEntry(name, type, goalValue, goalDate,complete) {
+    addEntry(name, type, goalValue, goalDate,complete,author) {
         var entry = {
+        author: author,
         name: name,
         type: type,
         goalValue: goalValue,
@@ -105,7 +107,19 @@ class goals {
                 }
             });
     }
-  
+
+    getEntriesByUser(authorName) {
+        return new Promise((resolve, reject) => {
+            this.db.find({ 'author': authorName }, function(err, entries) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(entries);
+            console.log('getEntriesByUser returns: ', entries);
+        }
+    })
+})
+}
       
 }
 

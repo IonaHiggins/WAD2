@@ -49,7 +49,7 @@ exports.showNewGoal = function (req, res) {
   };
 
 exports.addGoal = function(req,res){
-    db.addEntry(req.body.name,req.body.type,req.body.goalValue,req.body.goalDate,req.body.complete);
+    db.addEntry(req.body.name,req.body.type,req.body.goalValue,req.body.goalDate,req.body.complete,req.body.author);
   }
 
 exports.showDeleteGoal = function(req,res){
@@ -64,7 +64,7 @@ exports.showUpdateGoal = function(req,res){
 }
 
 exports.updateGoal = function(req,res){
-  db.updateEntry(req.body._id,req.body.name,req.body.type,req.body.goalValue,req.body.goalDate,req.body.complete);
+  db.updateEntry(req.body._id,req.body.name,req.body.type,req.body.goalValue,req.body.goalDate,req.body.author);
 }
 
 exports.showRegisterPage = function(req, res) {
@@ -88,3 +88,22 @@ exports.showRegisterPage = function(req, res) {
       });
       } 
 
+
+
+exports.showUserGoals = function(req,res){
+   res.render("/userGoals");
+}
+exports.getUserGoals = function(req, res) {
+  console.log('filtering author name', req.params.author);
+  let user = req.params.author;
+  db.getEntriesByUser(user).then(
+  (entries) => {
+    res.render('entries', {
+      'title': 'Guest Book',
+      'entries': entries
+      });
+      }).catch((err) => {
+        console.log('error handling author posts', err);
+      });
+      
+}
