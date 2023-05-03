@@ -7,7 +7,7 @@ const {verify} = require('../auth/auth')
 router.get('/login', controller.showLoginPage);
 router.post('/login', login, controller.handleLogin);
 
-/*router.get('/', controller.aboutUs);
+router.get('/', controller.aboutUs);
 
 router.get('/goals',controller.goals_index);
 
@@ -31,7 +31,7 @@ router.get("/update",controller.showUpdateGoal);
 router.post("/update",controller.updateGoal);
 
 router.get('/posts/:author/complete', controller.getCompleteUserGoals);
-router.get('/posts/:author', controller.getUserGoals);*/
+router.get('/posts/:author', controller.getUserGoals);
 
 
 router.get('/goals',verify,controller.goals_index);
