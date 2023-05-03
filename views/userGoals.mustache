@@ -3,38 +3,40 @@
         {{>header}}
     </head>
     <body>
-     {{#goal}}
-        <div class = "card">
-            <div class = "card-body">
-            <h5 class = "card-header">Goal:</h3>
-                <p class = "card-text">
-                    Author: {{author}}
-                <p class = "card-text">
-                    ID: {{_id}}
-                </p>
-                <p class = "card-text">
-                    Goal Name: {{name}}
-                </p>
-                <p class = "card-text">
-                    Goal Type: {{type}}
-                </p>
-                <p class = "card-text">
-                    Goal Value: {{goalValue}}
-                </p>
-                <p class = "card-text">
-                    Goal Date: {{goalDate}}
-                </p>
-                <p class = "card-text">
-                Goal Status: {{complete}}
+    {{>baseStyle}}
+        {{#goal}}
+            <div class = "card">
+                <div class = "card-body">
+                <h5 class = "card-header">Goal:</h3>
+                    <p class = "card-text">
+                        Author: {{author}}
+                    <p class = "card-text">
+                        ID: {{_id}}
+                    </p>
+                    <p class = "card-text">
+                        Goal Name: {{name}}
+                    </p>
+                    <p class = "card-text">
+                        Goal Type: {{type}}
+                    </p>
+                    <p class = "card-text">
+                        Goal Value: {{goalValue}}
+                    </p>
+                    <p class = "card-text">
+                        Goal Date: {{goalDate}}
+                    </p>
+                    <p class = "card-text">
+                    Goal Status: {{complete}}
+                </div>
+                <div class = "card-footer">
+                A goal for <a href =/posts/{{author}}>{{author}}</a>
+                </div>
             </div>
-            <div class = "card-footer">
-            A goal for <a href =/posts/{{author}}>{{author}}</a>
-            </div>
-        </div>
-        
-        {{/goal}}
-        {{^goal}}
-            No goals yet.
-        {{/goal}}
+            
+            {{/goal}}
+            {{^goal}}
+                No goals yet.
+            {{/goal}}
+        {{/baseStyle}}
     </body>
 </html>
