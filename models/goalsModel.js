@@ -108,19 +108,32 @@ class goals {
             });
     }
 
-    getEntriesByUser(authorName) {
+    getCompleteEntriesByUser(authorName,complete) {
         return new Promise((resolve, reject) => {
-            this.db.find({ 'author': authorName }, function(err, entries) {
+            this.db.find({ 'author': authorName, "complete":"on"}, function(err, goal) {
             if (err) {
                 reject(err);
             } else {
-                resolve(entries);
-            console.log('getEntriesByUser returns: ', entries);
+                resolve(goal);
+            console.log('getEntriesByUser returns: ', goal);
         }
     })
+    })
+}
+
+getEntriesByUser(authorName) {
+    return new Promise((resolve, reject) => {
+        this.db.find({ 'author': authorName}, function(err, goal) {
+        if (err) {
+            reject(err);
+        } else {
+            resolve(goal);
+        console.log('getEntriesByUser returns: ', goal);
+    }
+})
 })
 }
-      
+        
 }
 
 module.exports = goals;

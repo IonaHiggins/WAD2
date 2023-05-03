@@ -65,6 +65,7 @@ exports.showUpdateGoal = function(req,res){
 
 exports.updateGoal = function(req,res){
   db.updateEntry(req.body._id,req.body.name,req.body.type,req.body.goalValue,req.body.goalDate,req.body.author);
+  res.redirect("/goals_index")
 }
 
 exports.showRegisterPage = function(req, res) {
@@ -89,21 +90,30 @@ exports.showRegisterPage = function(req, res) {
       } 
 
 
+ exports.getCompleteUserGoals = function(req, res) {
+    console.log('filtering author name and completion', req.params.author);
+    let user = req.params.author;
+    db.getCompleteEntriesByUser(user).then(
+    (goal) => {
+      res.render('userGoals', {
+        'title': 'Guest Book',
+        'goal': goal
+        });
+        }).catch((err) => {
+          console.log('error handling author posts', err);
+        });
+  } 
 
-exports.showUserGoals = function(req,res){
-   res.render("/userGoals");
-}
-exports.getUserGoals = function(req, res) {
-  console.log('filtering author name', req.params.author);
-  let user = req.params.author;
-  db.getEntriesByUser(user).then(
-  (entries) => {
-    res.render('entries', {
-      'title': 'Guest Book',
-      'entries': entries
-      });
-      }).catch((err) => {
-        console.log('error handling author posts', err);
-      });
-      
-}
+  exports.getUserGoals = function(req, res) {
+    console.log('filtering author name', req.params.author);
+    let user = req.params.author;
+    db.getEntriesByUser(user).then(
+    (goal) => {
+      res.render('userGoals', {
+        'title': 'Guest Book',
+        'goal': goal
+        });
+        }).catch((err) => {
+          console.log('error handling author posts', err);
+        });
+  }
