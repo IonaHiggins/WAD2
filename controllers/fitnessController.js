@@ -11,7 +11,7 @@ exports.showLoginPage = function (req, res) {
 exports.handleLogin = function (req, res) {
   // res.redirect("/new");
   res.render("loggedInLanding", {
-    title: "Guest Book",
+    title: "Landing Page",
     user: "user"
   });
 };

@@ -7,7 +7,7 @@ const {verify} = require('../auth/auth')
 router.get('/login', controller.showLoginPage);
 router.post('/login', login, controller.handleLogin);
 
-router.get('/', controller.aboutUs);
+/*router.get('/', controller.aboutUs);
 
 router.get('/goals',controller.goals_index);
 
@@ -31,15 +31,17 @@ router.get("/update",controller.showUpdateGoal);
 router.post("/update",controller.updateGoal);
 
 router.get('/posts/:author/complete', controller.getCompleteUserGoals);
-router.get('/posts/:author', controller.getUserGoals);
+router.get('/posts/:author', controller.getUserGoals);*/
 
 
-/*router.get('/goals',verify,controller.goals_index);
+//router.get('/goals',verify,controller.goals_index);
+router.get('/login', controller.showLoginPage);
+router.post('/login', login, controller.handleLogin);
 
 router.get('/register',controller.showRegisterPage);
 router.post('/register', controller.postNewUser);
 
-router.get("/loggedin",verify, controller.goals_index)
+router.get("/loggedin",verify,controller.handleLogin);
 router.get('/add',verify,controller.showNewGoal);
 router.post("/add",controller.addGoal);
 
@@ -54,8 +56,10 @@ router.post("/delete",verify,controller.deleteGoal);
 router.get("/update",verify,controller.showUpdateGoal);
 router.post("/update",verify,controller.updateGoal);
 
-router.get('/login', controller.showLoginPage);*/
+router.get('/login', controller.showLoginPage);
 
+router.get('/posts/:author/complete',verify, controller.getCompleteUserGoals);
+router.get('/posts/:author',verify,controller.getUserGoals);
 
 router.use(function(req, res) {
     res.status(404);
