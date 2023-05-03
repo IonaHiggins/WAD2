@@ -110,7 +110,7 @@ class goals {
 
     getCompleteEntriesByUser(authorName,complete) {
         return new Promise((resolve, reject) => {
-            this.db.find({ 'author': authorName, "complete":"on"}, function(err, goal) {
+            this.db.find({ 'author': authorName, "complete":"complete"}, function(err, goal) {
             if (err) {
                 reject(err);
             } else {
