@@ -8,7 +8,7 @@
                 <div class = "card-body">
                     <form action="/update" method="POST">
                         <fieldset>
-                            <h5 class = "card-title>Edit Goal</h5>
+                            <h5 class = "card-title">Edit Goal:</h5>
                             <div class = "card-text">
                                 <label>Goal ID:</label>
                                 <input type = "text" id = "_id" name = "_id" required>
@@ -34,8 +34,11 @@
                                 <label>Goal Date</label>
                                 <input type ="date" id = "goalDate" name = "goalDate" required>
                                 <br></br>
-                                <label>Complete</label>
-                                <input type = "checkbox" id = "complete" name = "complete">
+                                 <label>Goal Status:</label>
+                                <select name = "complete">
+                                    <option value = "ongoing">Ongoing</option>
+                                    <option value = "complete">Complete</option>
+                                </select>
                                 <br></br>
                                 <button class= "btn btn-primary" href ="/update" >Update Goal</a>
                             </div>
