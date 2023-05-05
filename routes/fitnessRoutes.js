@@ -33,7 +33,6 @@ router.post("/update",controller.updateGoal);
 router.get('/posts/:author/complete', controller.getCompleteUserGoals);
 router.get('/posts/:author', controller.getUserGoals);
 
-
 router.get('/goals',verify,controller.goals_index);
 /*router.get('/login', controller.showLoginPage);
 router.post('/login', login, controller.handleLogin);

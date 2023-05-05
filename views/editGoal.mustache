@@ -3,43 +3,45 @@
         {{>header}}
     </head>
     <body>
-        <div class = "card">
-            <div class = "card-body">
-                <form action="/update" method="POST">
-                    <fieldset>
-                        <h5 class = "card-title>Edit Goal</h5>
-                        <div class = "card-text">
-                            <label>Goal ID:</label>
-                            <input type = "text" id = "_id" name = "_id" required>
-                            <br></br>
-                            <label>My Name:</label>
-                            <input type ="text" id = "author" name = "author">
-                            <br></br>
-                            <label>Goal Name:</label>
-                            <input type = "text" id = "name" name = "name" required>
-                            <br></br>
+        <div class = "mx-auto" style="width: 60em;margin-top:5em;">
+            <div class = "card">
+                <div class = "card-body">
+                    <form action="/update" method="POST">
+                        <fieldset>
+                            <h5 class = "card-title>Edit Goal</h5>
+                            <div class = "card-text">
+                                <label>Goal ID:</label>
+                                <input type = "text" id = "_id" name = "_id" required>
+                                <br></br>
+                                <label>My Name:</label>
+                                <input type ="text" id = "author" name = "author">
+                                <br></br>
+                                <label>Goal Name:</label>
+                                <input type = "text" id = "name" name = "name" required>
+                                <br></br>
 
-                            <label>Goal Type:</label>
-                            <select name = "type">
-                                <option value = "lifestyleGoal">Lifestyle Goal</option>
-                                <option value = "fitnessGoal">Fitness Goal</option>
-                                <option value = "nutritionGoal">Nutrition Goal</option>
-                            </select>
-                            <br></br>
+                                <label>Goal Type:</label>
+                                <select name = "type">
+                                    <option value = "lifestyleGoal">Lifestyle Goal</option>
+                                    <option value = "fitnessGoal">Fitness Goal</option>
+                                    <option value = "nutritionGoal">Nutrition Goal</option>
+                                </select>
+                                <br></br>
 
-                            <label>Goal Value</label>
-                            <input type="text" id = "goalValue" name = "goalValue" required>
-                            <br></br>
-                            <label>Goal Date</label>
-                            <input type ="date" id = "goalDate" name = "goalDate" required>
-                            <br></br>
-                            <label>Complete</label>
-                            <input type = "checkbox" id = "complete" name = "complete">
-                            <br></br>
-                            <button class= "btn btn-primary" href ="/update" >Update Goal</a>
-                        </div>
-                    </fieldset>
-                </form>
+                                <label>Goal Value</label>
+                                <input type="text" id = "goalValue" name = "goalValue" required>
+                                <br></br>
+                                <label>Goal Date</label>
+                                <input type ="date" id = "goalDate" name = "goalDate" required>
+                                <br></br>
+                                <label>Complete</label>
+                                <input type = "checkbox" id = "complete" name = "complete">
+                                <br></br>
+                                <button class= "btn btn-primary" href ="/update" >Update Goal</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
     </body>

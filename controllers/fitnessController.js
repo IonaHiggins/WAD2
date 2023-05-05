@@ -32,16 +32,7 @@ exports.showLifestyle = function(req,res){
 }
 
 exports.goals_index = function (req, res) {
-    db.getAllEntries()
-      .then((list) => {
-        res.render("allGoalsData", {
-          title: "Current Goals",
-          goal: list,
-        });
-      })
-      .catch((err) => {
-        console.log("promise rejected", err);
-      });
+    res.render("goalsIndex");
   };
   
 exports.showNewGoal = function (req, res) {
@@ -88,7 +79,6 @@ exports.showRegisterPage = function(req, res) {
         res.redirect('/login');
       });
       } 
-
 
  exports.getCompleteUserGoals = function(req, res) {
     console.log('filtering author name and completion', req.params.author);

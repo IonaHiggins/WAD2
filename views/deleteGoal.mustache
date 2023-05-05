@@ -3,19 +3,21 @@
         {{>header}}
     </head>
     <body>
-        <div class = "card">
-            <div class = "card-body">
-                <form action = "/delete" method = "POST">
-                    <fieldset>
-                        <h5 class = "card-title">Delete Goal:</h5>
-                        <div class = "card-text">
-                            <label>Goal ID:</label>
-                            <input type = "text" id = "_id" name = "_id" required>
-                            <br></br>
-                            <button class = "btn btn-primary" href = "/delete">Delete Goal</a>
-                        </div>
-                    </fieldset>
-                </form>  
+        <div class = "mx-auto" style="width: 60em;margin-top:5em;">
+            <div class = "card">
+                <div class = "card-body">
+                    <form action = "/delete" method = "POST">
+                        <fieldset>
+                            <h5 class = "card-title">Delete Goal:</h5>
+                            <div class = "card-text">
+                                <label>Goal ID:</label>
+                                <input type = "text" id = "_id" name = "_id" required>
+                                <br></br>
+                                <button class = "btn btn-primary" href = "/delete">Delete Goal</a>
+                            </div>
+                        </fieldset>
+                    </form>  
+                </div>
             </div>
         </div>
     </body>
