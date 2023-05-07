@@ -17,15 +17,13 @@
     "nedb": "^1.8.0",
     "sqlite3": "^5.1.6"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IonaHiggins/WAD2.git"
   },
   "engines": {
-    "node": "14.17.3"
+    "node": "18.14.0"
   },
-    
   "bugs": {
     "url": "https://github.com/IonaHiggins/WAD2/issues"
   },
