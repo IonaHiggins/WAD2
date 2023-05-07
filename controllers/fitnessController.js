@@ -56,7 +56,7 @@ exports.showUpdateGoal = function(req,res){
 
 exports.updateGoal = function(req,res){
   db.updateEntry(req.body._id,req.body.name,req.body.type,req.body.goalValue,req.body.goalDate,req.body.author);
-  res.redirect("/goals_index");
+
 }
 
 exports.showRegisterPage = function(req, res) {
