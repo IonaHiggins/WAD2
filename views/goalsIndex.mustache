@@ -5,29 +5,28 @@
     <body>
     <div class = "mx-auto" style="width: 60em;margin-top:5em;margin-left:15em;margin-right:15em;">
         <div class = "card">
-         <div class = "row-flex">
-                    <div class = "span-1 offset 1" style="float-right;">
-                        <a href = "/loggedin" class = "btn btn-primary">Back</a>
+            <div class = "row-flex">
+                        <div class = "span-1 offset 1" style="float-right;">
+                            <a href = "/loggedin" class = "btn btn-primary">Back</a>
+                        </div>
+                    </div>
+                <div class = "row">
+                    <div class = "span-12">
+                <div class = "card-body">
+                    <div class = "card-text">
+                        <h5 class = "card-title">
+                            Goals
+                        </h5>
                     </div>
                 </div>
-            <div class = "row">
-                <div class = "span-12">
-            <div class = "card-body">
-                <div class = "card-text">
-                    <h5 class = "card-title">
-                        Goals
-                    </h5>
-                </div>
-            </div>
             </div>
         </div>
         <hr></hr>
         <div class = "card">
                     <div class ="row">
                             <div class = "span-2 offset 1">
-                            {{#goal}}
-                                <a href =./posts/{{author}}>
-                            {{/goal}}
+                                <a href ="./posts/{{user}}">
+                            
                                     <div class = "card">
                                         <div class = "card-body">
                                             <h5 class = "card-title">

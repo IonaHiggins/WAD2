@@ -9,32 +9,7 @@ router.post('/login', login, controller.handleLogin);
 
 router.get('/', controller.aboutUs);
 
-router.get("/loggedin",controller.handleLogin);
-router.get('/register',controller.showRegisterPage);
-router.post('/register', controller.postNewUser);
-
-router.get("/loggedin",controller.goals_index)
-router.get('/add',controller.showNewGoal);
-router.post("/add",controller.addGoal);
-
-router.get('/lifestyle',controller.showLifestyle);
-router.get('/nutrition', controller.showNutrition);
-router.get('/fitness',controller.showFitness);
-
-router.get("/delete",controller.showDeleteGoal);
-router.post("/delete",controller.deleteGoal);
-
-router.get("/update",controller.showUpdateGoal);
-router.post("/update",controller.updateGoal);
-
-router.get('/posts/:author/complete', controller.getCompleteUserGoals);
-router.get('/posts/:author', controller.getUserGoals);
-
-router.get('/goals',verify, controller.getIndexUserGoals);
-router.post('/goals',verify,controller.goals_index);
-
-
-/*router.get('/login', controller.showLoginPage);
+router.get('/login', controller.showLoginPage);
 router.post('/login', login, controller.handleLogin);
 
 router.get('/register',controller.showRegisterPage);
@@ -60,6 +35,8 @@ router.get('/login', controller.showLoginPage);
 router.get('/posts/:author/complete',verify, controller.getCompleteUserGoals);
 router.get('/posts/:author',verify,controller.getUserGoals);
 
+router.post('/goals',verify,controller.goals_index);
+
 router.use(function(req, res) {
     res.status(404);
     res.type('text/plain');
@@ -70,6 +47,5 @@ router.use(function(err, req, res, next) {
     res.status(500);
     res.type('text/plain');
     res.send('Internal Server Error.');
-}) */
-
+}) 
 module.exports = router;
