@@ -62,6 +62,7 @@ exports.updateGoal = function(req,res){
 exports.showRegisterPage = function(req, res) {
   res.render("user/registration");
    } 
+
     exports.postNewUser = function(req, res) {
       const user = req.body.username;
       const password = req.body.pass;
@@ -100,6 +101,20 @@ exports.showRegisterPage = function(req, res) {
     db.getEntriesByUser(user).then(
     (goal) => {
       res.render('userGoals', {
+        'title': 'Guest Book',
+        'goal': goal
+        });
+        }).catch((err) => {
+          console.log('error handling author posts', err);
+        });
+  }
+
+  exports.getIndexUserGoals = function(req, res) {
+    console.log('filtering author name', req.params.author);
+    let user = req.params.author;
+    db.getEntriesByUser(user).then(
+    (goal) => {
+      res.render('goalsIndex', {
         'title': 'Guest Book',
         'goal': goal
         });

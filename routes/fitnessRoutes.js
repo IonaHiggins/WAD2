@@ -9,8 +9,6 @@ router.post('/login', login, controller.handleLogin);
 
 router.get('/', controller.aboutUs);
 
-router.get('/goals',controller.goals_index);
-
 router.get("/loggedin",controller.handleLogin);
 router.get('/register',controller.showRegisterPage);
 router.post('/register', controller.postNewUser);
@@ -23,7 +21,6 @@ router.get('/lifestyle',controller.showLifestyle);
 router.get('/nutrition', controller.showNutrition);
 router.get('/fitness',controller.showFitness);
 
-
 router.get("/delete",controller.showDeleteGoal);
 router.post("/delete",controller.deleteGoal);
 
@@ -33,7 +30,10 @@ router.post("/update",controller.updateGoal);
 router.get('/posts/:author/complete', controller.getCompleteUserGoals);
 router.get('/posts/:author', controller.getUserGoals);
 
-router.get('/goals',verify,controller.goals_index);
+router.get('/goals',verify, controller.getIndexUserGoals);
+router.post('/goals',verify,controller.goals_index);
+
+
 /*router.get('/login', controller.showLoginPage);
 router.post('/login', login, controller.handleLogin);
 
