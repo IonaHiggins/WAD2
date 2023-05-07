@@ -56,7 +56,7 @@ exports.showUpdateGoal = function(req,res){
 
 exports.updateGoal = function(req,res){
   db.updateEntry(req.body._id,req.body.name,req.body.type,req.body.goalValue,req.body.goalDate,req.body.author);
-  res.redirect("/goals_index")
+  res.redirect("/goals_index");
 }
 
 exports.showRegisterPage = function(req, res) {
@@ -101,20 +101,6 @@ exports.showRegisterPage = function(req, res) {
     db.getEntriesByUser(user).then(
     (goal) => {
       res.render('userGoals', {
-        'title': 'Guest Book',
-        'goal': goal
-        });
-        }).catch((err) => {
-          console.log('error handling author posts', err);
-        });
-  }
-
-  exports.getIndexUserGoals = function(req, res) {
-    console.log('filtering author name', req.params.author);
-    let user = req.params.author;
-    db.getEntriesByUser(user).then(
-    (goal) => {
-      res.render('goalsIndex', {
         'title': 'Guest Book',
         'goal': goal
         });
