@@ -35,7 +35,7 @@ router.get('/login', controller.showLoginPage);
 router.get('/posts/:author/complete',verify, controller.getCompleteUserGoals);
 router.get('/posts/:author',verify,controller.getUserGoals);
 
-router.post('/goals',verify,controller.goals_index);
+router.get('/goals',verify,controller.goals_index);
 
 router.use(function(req, res) {
     res.status(404);
